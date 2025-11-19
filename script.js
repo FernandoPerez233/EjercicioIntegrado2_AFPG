@@ -1,8 +1,8 @@
 function calcularTotal() {
-    var formulario = document.getElementById("calcular")
+    var formulario = document.getElementById("calcular");
 
     var nombre  = formulario.nombre.value;
-    var email   = formulario.email.value;
+    var email   = formulario.correo.value;
 
     if (nombre === "" || email === "") {
         alert("Por favor, complete los campos de Nombre y Email.");
@@ -27,32 +27,50 @@ function calcularTotal() {
         alert("Por favor, seleccione una marca de vehículo.");
         return;
     }
-    else if (marca === "honda") {
-        
-    }
-    else if (marca === "nissan") {
-    
-    }
-    else if (marca === "toyota") {
-    }
-    else if (marca === "mazda") {
-    }
-    else if (marca === "hyundai") {
 
+    var totalExtras = 0;
+    var textExtras = "";
+
+    if (document.getElementById("aire").checked) {
+        totalExtras = totalExtras;
+        textExtras = textExtras + "- Aire acondicionado";
     }
-    else if (marca === "kia") {
-
+    if (document.getElementById("gps").checked) {
+        totalExtras = totalExtras;
+        textExtras = textExtras + "- GPS";
     }
-    else if (marca === "mitsubishi") {
-
+    if (document.getElementById("seguro").checked) {
+        totalExtras = totalExtras;
+        textExtras = textExtras + "- Incluir Seguro";
     }
-    else if (marca === "suzuki") {
+    if (document.getElementById("quemacocos").checked) {
+        totalExtras = totalExtras;
+        textExtras = textExtras + "- Quemacocos";
+    }
+    if (document.getElementById("camara-trasera").checked) {
+        totalExtras = totalExtras;
+        textExtras = textExtras + "- Cámara trasera";
+    }
+    if (document.getElementById("camara-frontal").checked) {
+        totalExtras = totalExtras;
+        textExtras = textExtras + "- Cámara frontal";
+    }
 
+    var mensaje = "===== COTIZACIÓN =====\n\n" +
+                  "Nombre: " + nombre + "\n" +
+                  "Email: " + email + "\n" +
+                  "Marca: " + marca + "\n" +
+                  "Financiamiento: " + financiamiento + "\n\n" ;
+
+    if (textExtras !== "") {
+        mensaje = mensaje + "\nExtras:\n" + textExtras;
+    } else {
+        mensaje = mensaje + "Extras: Ninguno\n";
     }
 
 
-
-    
-
+    var html = "<p>" + mensaje.replace(/\n/g, "<br>") + "</p>";
+    document.getElementById('contenido-cotizacion').innerHTML = html;
+    document.getElementById('cotizacion-resultado').style.display = 'block';
 
 }
