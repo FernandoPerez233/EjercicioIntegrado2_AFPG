@@ -59,7 +59,7 @@
                         <a href="">Agencia</a>
                     </td>
                     <td>
-                        <img src="img/logokia.jpg" alt="Logo kia" width="150" height="100">
+                        <img src="img/logokia.png" alt="Logo kia" width="150" height="100">
                         <img src="img/autokia.jpg" alt="Carro kia" width="150" height="100">
                         <a href="">Agencia</a>
                     </td>
@@ -95,22 +95,41 @@
         </div>
         
         <div class="cotizacion-container">
-            <form action="get" id="calcular">
-                <label for="text">Nombre completo</label>
+            <form method="get" id="calcular">
+                <label for="nombre">Nombre completo</label>
                 <input type="text" id="nombre" name="nombre" required>
-                <br>
+                
+
                 <label for="email">Correo electronico</label>
                 <input type="email" id="correo" name="correo" required>
-                <br>
-                <br>
+                <br> 
 
-                <label for="text">Tipo de financiamiento
-                    <input type="radio"> <label for="text">Crédito</label>  
-                    <input type="radio"> Contado
-                </label>
-                <br>
-
-                <input type="checkbox">
+                <fieldset>
+                    <legend>Tipo de financiamiento</legend>
+                    <input type="radio" id="credito" name="financiamiento" value="credito"> <label for="text">Crédito</label>  
+                    <input type="radio" id="contado" name="financiamiento" value="contado"> <label for="text">Contado</label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Extras</legend>
+                        <input type="checkbox" id="aire" name="aire" value="aire"> <label     for="aire">Aire acondicionado</label>
+                        <input type="checkbox" id="gps" name="gps" value="gps">
+                        <label for="gps">GPS</label>
+                        
+                        <input type="checkbox" id="seguro" name="seguro" value="seguro">
+                        <label for="seguro">Incluir Seguro</label>
+                        
+                        <input type="checkbox" id="quemacocos" name="quemacocos" value="quemacocos">
+                        <label for="quemacocos">Quemacocos</label>
+                        
+                        <input type="checkbox" id="camara-trasera" name="camara-trasera" value="camara-trasera">
+                        <label for="camara-trasera">Cámara trasera</label>
+                        
+                        <input type="checkbox" id="camara-frontal" name="camara-frontal" value="camara-frontal">
+                        <label for="camara-frontal">Cámara frontal</label>
+                
+                </fieldset>
+                   
 
                 <label for="text">
                     Marca del vehiculo
@@ -126,14 +145,16 @@
                     </select>
 
                 </label>
+
+                <button type="button" onclick="CalcularTotal()"> Enviar cotización</button>
             </form> 
         </div>
 
         <div class="footer-container">
             <footer>
-                <hr>
+                <hr style="background: red; width: auto; height: 5px; border-radius: 25px;">
                 <h3> @45722 @Angel Fernando Pérez García :p </h4>
-                <hr>
+                <hr style="background: red; width: auto; height: 5px; border-radius: 25px;">
             </footer>
         </div>
     </div>

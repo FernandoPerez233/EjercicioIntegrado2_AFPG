@@ -6,6 +6,7 @@
 
 header{
     background: #BFC7CE;
+    padding: 10px 0;
 }
 
 h1{
@@ -16,8 +17,9 @@ h1{
     text-shadow: 2px 2px 4px #000000;
 }
 
+
 div.header-container{
-    width: 100%;
+    width: auto;
     margin: auto;
     background: #E3E8EB;
     padding: 20px;
@@ -25,30 +27,107 @@ div.header-container{
     text-shadow: 2px 2px 4px #000000;
 }
 
+.table-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1400px;
+}
+
 .table-info{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
     align-items: center;
+    margin-top: 30px;
+    border-collapse: separate;
+    border-spacing: 15px;
+    
 }   
+
+.table-info td {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background: #F5F5F5;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
 
 .table-info marquee{
     border: 2px solid #000000;
     border-radius: 10px;
     background: #d84e24;
     padding: 10px;
+    text-transform: uppercase;
+}
+
+.table-autos{
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin: 20px auto; 
+    width: fit-content;
 }
 
 .table-autos td {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-
-    padding: 10px;
-    margin: 5px auto; 
-
+    text-align: center;
+    vertical-align: top;
+    padding: 15px;
     border: 2px solid #000000;
     border-radius: 10px;
     background: #F5F5F5;
+    width: 180px;
+}
+
+.table-autos td img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.table-autos td a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.cotizacion-container{
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background: #E3E8EB;
+    width: fit-content;
+    border-radius: 10px;
+    border : 2px solid #000000;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    align-items: center;
+    width: 400px;
+}
+
+form label{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form input, form select{
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid #ccc;   
+}
+
+fieldset{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;  
+    flex-direction: column;
 }
